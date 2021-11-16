@@ -8,12 +8,20 @@
 let Product = require("../model/productModel.js");
 const {getPostData} = require("../utils.js")
 
+const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'OPTIONS, POST, GET',
+    'Access-Control-Max-Age': 2592000, // 30 days
+    "Content-type":"application/json"
+    /** add other headers as per requirement */
+  };
+
 async function getProduct(req: IncomingMessage, res: ServerResponse) {
 
     
     try{
         const product  = await Product.findAll();
-        res.writeHead(200,{"Content-type":"application/json"});
+        res.writeHead(200, headers);
         res.write(JSON.stringify(product));
         res.end();
 
@@ -35,7 +43,7 @@ async function getProduct(req: IncomingMessage, res: ServerResponse) {
      try{
         if(!productById){
 
-            res.writeHead(404,{"Content-type":"application/json"});
+            res.writeHead(404,headers);
             res.end(JSON.stringify("product  you are looking for does not exist")); 
     
          }else{
@@ -91,7 +99,7 @@ async function getProduct(req: IncomingMessage, res: ServerResponse) {
 
         const newProduct = await Product.create(newProductList);
 
-        res.writeHead(201, {"Content-type":"application/json"})// 201 means created
+        res.writeHead(201,headers)// 201 means created
         return res.end(JSON.stringify(newProduct));
 
     
@@ -113,7 +121,7 @@ async function updateProductById(req:IncomingMessage,res: ServerResponse, id:num
         const product  = await Product.findById(id);
 
         if(!product){
-            res.writeHead(404,{"Content-type":"application/json"});
+            res.writeHead(404, headers);
             res.end(JSON.stringify("product  you are looking for does not exist")); 
         }else{
 
@@ -149,7 +157,7 @@ async function updateProductById(req:IncomingMessage,res: ServerResponse, id:num
 
         const updateProduct = await Product.update(id, updateProductList);
 
-        res.writeHead(200, {"Content-type":"application/json"})// 201 means created
+        res.writeHead(200,headers)// 201 means created
         return res.end(JSON.stringify(updateProduct));
         }   
     }catch(err){
@@ -167,13 +175,13 @@ async function removeProductById(req:IncomingMessage,res: ServerResponse, id:num
         const product  = await Product.findById(id);
 
         if(!product){
-            res.writeHead(404,{"Content-type":"application/json"});
+            res.writeHead(404,headers);
             res.end(JSON.stringify("product  you are looking for does not exist")); 
         }else{
 
           await Product.remove(id);
 
-        res.writeHead(200, {"Content-type":"application/json"})// 201 means created
+        res.writeHead(200, )// 201 means created
         res.end(JSON.stringify(`Product with ${id} has been removed`));
         }   
     }catch(err){
