@@ -1,8 +1,6 @@
 
 
 const fs = require('fs');
-const { resolve } = require('path/posix');
-
 //write to file...
 
 export function writeDataToFile(filePath:any,content:any){

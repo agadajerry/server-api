@@ -1,5 +1,5 @@
 import http, { IncomingMessage, Server, ServerResponse } from "http";
-const hostname = '127.0.0.1';
+// const hostname = '127.0.0.1';
 
 const {
    getProduct, 
@@ -13,7 +13,7 @@ implement your server code here
 
 
 
-const port = 2001
+const port = process.env.PORT || 2001
 
 let server :Server = http.createServer((req: IncomingMessage, res: ServerResponse)=>{
    
@@ -59,5 +59,5 @@ else{
 
 
  server.listen(port,()=>{
-  console.log(`server is running at port ${port} -> ${hostname}`);
+//   console.log(`server is running at port ${port} -> ${hostname}`);
 })
