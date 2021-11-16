@@ -23,7 +23,7 @@ let server :Server = http.createServer((req: IncomingMessage, res: ServerRespons
 
    }
    //get product by id
-   else if(req.url?.match(/\/api\/products\/([0-9]+)/)  && req.method==="GET"){
+   else if(req.url?.match(/\/jerry\/api\/([0-9]+)/)  && req.method==="GET"){
          
          const id = req.url.split("/")[3]
          getProductById(req,res,id); 
@@ -36,14 +36,14 @@ let server :Server = http.createServer((req: IncomingMessage, res: ServerRespons
 
    }
     //Update product via id
-   else if(req.url?.match(/\/api\/products\/([0-9]+)/)  && req.method==="PUT"){
+   else if(req.url?.match(/\/jerry\/api\/([0-9]+)/)  && req.method==="PUT"){
       
       const id = req.url.split("/")[3]
      updateProductById(req,res, id)
 
 }
  // remove product by id
-else if(req.url?.match(/\/api\/products\/([0-9]+)/)  && req.method==="DELETE"){
+else if(req.url?.match(/\/jerry\/api\/([0-9]+)/)  && req.method==="DELETE"){
       
    const id = req.url.split("/")[3]
   removeProductById(req,res, id)
