@@ -1,0 +1,252 @@
+body{
+	background: #f8f8ff;
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+.vertical-nav{
+	background: #599fd9 !important;
+	color: white !important;
+	min-width: 17rem;
+	width: 17rem;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+	transition: all 0.5s;
+	z-index: 32;
+}
+.nav-link{
+	color: white !important;
+}
+
+.page-content{
+	width: cal(100-17rem);
+	margin-left: 17rem;
+	transition: all 0.5s;
+}
+
+#sidebar.active{
+margin-left: -17rem;
+}
+
+#content.active{
+	width: 100%;
+	margin-left: 0;
+}
+.text-uppercase{
+	letter-spacing: 0.1em;
+}
+.nav-link{
+	text-transform: capitalize;
+}
+
+
+/*background for each card*/
+
+.col-md-3 .first-card-bg{
+	background: #a274b0;
+	color: #fff;
+}
+
+.col-md-3 .second-card-bg{
+	background: #2fd988;
+	color: #fff;
+}
+
+.col-md-3 .third-card-bg{
+	background: #e71ce6;
+	color: #fff;
+}
+
+.col-md-3 .fourth-card-bg{
+	background: #9cc97b;
+	color: #fff;
+}
+.col-md-4 .fifth-card-bg{
+	background: #364646;
+	color: #fff;
+}
+.col-md-4 .sixth-card-bg{
+	background: #5d9b9b;
+	color: #fff;
+}
+.col-md-4 .seventh-card-bg{
+	background: #5b3a29;
+	color: #fff;
+}
+
+.input-group #inputGroupPrepend{
+	background: #fff;
+	color: #ccc;
+}
+ /*login link*/
+ .account_already{
+ 	display: block;
+ 	text-decoration: none;
+ }
+
+
+
+/*media query*/
+
+@media (max-width: 768px){
+	#sidebar{
+		margin-left: -17rem;
+	}
+	#sidebar.active{
+		margin-left: 0;
+	}
+	#content{
+		width: 100%;
+		margin: 0;
+	}
+	#content.active{
+		margin-left: 17rem;
+		width: cal(100%-17rem);
+	}
+	.row {
+		display: block !important;
+		
+	}
+	
+	.row .col-md-4,.col-md-3{
+		width: 100%;
+		max-width: 100%;
+		margin: 20px auto;
+	}
+	.bg-white,.bg-success p{
+		font-size: 16px;
+		padding: 6px 0;
+	}
+	.btn-success,.btn-primary{
+		font-size: 12px;
+		padding: 5px 5px  !important;
+		margin-right: 10px;	
+	}
+	.regbtn .btn{
+		width: 100%;
+		
+	}
+	
+}
+
+
+/*
+
+html{
+	scroll-behavior: smooth;
+}
+
+
+
+p{
+	font-size: 18px;
+	line-height: 30px;
+	margin-bottom: 20px;
+}
+
+
+nav{
+	box-shadow: 4px 0 10px;
+}
+
+.showcase-img{
+	width: 100%;
+	height: 100%;
+	border-radius: 30px;
+}
+
+.col-info,.col-img{
+	margin: 40px 0;
+}
+
+ h3{
+	font-size: 55px;
+	font-weight: bolder;
+	padding-top: 35px;
+	color: #ff8444;
+	text-transform: capitalize;
+}
+/*about us
+.about-us{
+	margin: 50px 0;
+}
+
+.card-title{
+	color: #ff8444;
+}
+
+/*profutable strategies section
+
+.biz-profit .card{
+	background: #364646;
+	color: #fff;
+	border-radius: 20px;
+}
+ .col-md-4{
+	border-radius: 20px;
+}
+.signbtn{
+	width: 100%;
+	height: auto;
+	margin-bottom: 30px;
+	padding-top: 20px;
+}
+.signbtn .btn{
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+/*testmonial
+
+.testmonial .card{
+	
+	margin-bottom: 60px;
+}
+.testmonial .card:hover{
+	transform: scaleY(1.07);
+	transition: 0.8s ease;
+	box-shadow: 2px 5px 8px;
+}
+
+.navbar-right{
+	float: right;
+
+}
+.subhead{
+	font-size: 33px;
+	font-weight: bolder;
+	color: #ff9444;
+	text-transform: capitalize;
+}
+
+#floatingTextarea{
+	width: 400px;
+	height: 100px;
+}
+/*media query section
+
+@media  screen and (max-width: 746px){
+
+	h3{
+	font-size: 35px;
+	
+}
+.subhead{
+	font-size: 30px;
+	}
+
+.col-md-3{
+	 margin-bottom: 30px;
+}
+
+#floatingTextarea{
+	width: 100%;
+}
+#navbarNav{
+	padding-left: 20px;
+}
+
+}*/
