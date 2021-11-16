@@ -8,12 +8,12 @@ let price = document.getElementById("price");
 let productdescription = document.getElementById("productdescription");
 let image = document.getElementById("image");
 let color = document.getElementById("color");
-
+let url ="https://jerrysofttechy-server.herokuapp.com/api/products";
 
 submit.addEventListener("click",(e)=>{
      e.preventDefault();
 
-fetch("http://localhost:3002/api/products",{
+fetch(url,{
     method:"POST",
     body:JSON.stringify({
 

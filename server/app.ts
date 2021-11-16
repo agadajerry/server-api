@@ -18,7 +18,7 @@ const port = process.env.PORT || 2001
 let server :Server = http.createServer((req: IncomingMessage, res: ServerResponse)=>{
    
     
-    if(req.url =="/api/products" && req.method=="GET"){
+    if(req.url =="/jerry/api" && req.method=="GET"){
      getProduct(req,res);
 
    }
@@ -30,7 +30,7 @@ let server :Server = http.createServer((req: IncomingMessage, res: ServerRespons
 
    }
    //insert new Product
-   else if(req.url ==="/api/products" && req.method==="POST"){
+   else if(req.url ==="/jerry/api" && req.method==="POST"){
 
       createProduct(req,res);//
 
